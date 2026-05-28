@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kundenliste - Ice Cream Vendor Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ice: {
+                            cream: '#FDFCF0',
+                            strawberry: '#FF8A8A',
+                            chocolate: '#634832',
+                            mint: '#98FF98',
+                            cone: '#D2B48C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-ice-chocolate text-white flex-shrink-0 flex flex-col hidden md:flex">
+        <div class="p-6 text-center border-b border-white border-opacity-10">
+            <h2 class="text-2xl font-bold tracking-wider text-ice-mint">GROSSHANDEL</h2>
+            <p class="text-xs text-ice-cone">Admin-Bereich</p>
+        </div>
+        <nav class="mt-6 flex-1 px-4 space-y-2">
+            <a href="vendor-dashboard.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Offene Bestellungen</span>
+            </a>
+            <a href="vendor-warehouse.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Lagerübersicht</span>
+            </a>
+            <a href="vendor-customers.html" class="flex items-center px-4 py-3 bg-white bg-opacity-10 rounded-lg text-ice-mint">
+                <span class="font-medium">Kundenliste</span>
+            </a>
+            <a href="vendor-stats.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium text-gray-300">Statistiken</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-white border-opacity-10">
+            <a href="login.html" class="text-sm text-gray-400 hover:text-white transition-colors">Abmelden</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Kundenliste</h1>
+            <p class="text-gray-500">Verwaltung der registrierten Eishändler und deren Kontaktdaten.</p>
+        </header>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-500 text-xs uppercase font-bold">
+                    <tr>
+                        <th class="px-6 py-4">Kunde</th>
+                        <th class="px-6 py-4">Standort</th>
+                        <th class="px-6 py-4">Letzte Bestellung</th>
+                        <th class="px-6 py-4">Status</th>
+                        <th class="px-6 py-4 text-right">Umsatz (Gesamt)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 text-sm">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4">
+                            <div class="font-bold text-gray-800">Eiscafé Venezia</div>
+                            <div class="text-xs text-gray-500">Mario Rossi</div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500">Innenstadt</td>
+                        <td class="px-6 py-4">28.05.2026</td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Aktiv</span>
+                        </td>
+                        <td class="px-6 py-4 text-right font-bold">12.450 €</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4">
+                            <div class="font-bold text-gray-800">Gelateria del Porto</div>
+                            <div class="text-xs text-gray-500">Luigi Bianchi</div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500">Hafenviertel</td>
+                        <td class="px-6 py-4">28.05.2026</td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Aktiv</span>
+                        </td>
+                        <td class="px-6 py-4 text-right font-bold">8.120 €</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4">
+                            <div class="font-bold text-gray-800">Stadtpark Kiosk</div>
+                            <div class="text-xs text-gray-500">Inge Müller</div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500">Nordstadt</td>
+                        <td class="px-6 py-4">27.05.2026</td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Aktiv</span>
+                        </td>
+                        <td class="px-6 py-4 text-right font-bold">3.200 €</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4">
+                            <div class="font-bold text-gray-800">Eis-Express 24</div>
+                            <div class="text-xs text-gray-500">Stefan Schnell</div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500">Gewerbepark</td>
+                        <td class="px-6 py-4">12.04.2026</td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-bold">Inaktiv</span>
+                        </td>
+                        <td class="px-6 py-4 text-right font-bold">1.500 €</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

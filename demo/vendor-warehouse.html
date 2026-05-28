@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagerübersicht - Ice Cream Vendor Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ice: {
+                            cream: '#FDFCF0',
+                            strawberry: '#FF8A8A',
+                            chocolate: '#634832',
+                            mint: '#98FF98',
+                            cone: '#D2B48C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-ice-chocolate text-white flex-shrink-0 flex flex-col hidden md:flex">
+        <div class="p-6 text-center border-b border-white border-opacity-10">
+            <h2 class="text-2xl font-bold tracking-wider text-ice-mint">GROSSHANDEL</h2>
+            <p class="text-xs text-ice-cone">Admin-Bereich</p>
+        </div>
+        <nav class="mt-6 flex-1 px-4 space-y-2">
+            <a href="vendor-dashboard.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Offene Bestellungen</span>
+            </a>
+            <a href="vendor-warehouse.html" class="flex items-center px-4 py-3 bg-white bg-opacity-10 rounded-lg text-ice-mint">
+                <span class="font-medium">Lagerübersicht</span>
+            </a>
+            <a href="vendor-customers.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Kundenliste</span>
+            </a>
+            <a href="vendor-stats.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Statistiken</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-white border-opacity-10">
+            <a href="login.html" class="text-sm text-gray-400 hover:text-white transition-colors">Abmelden</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Lagerübersicht</h1>
+            <p class="text-gray-500">Detaillierte Bestände aller Eissorten über alle Lagerstandorte hinweg.</p>
+        </header>
+
+        <div class="grid grid-cols-1 gap-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-gray-50 text-gray-500 text-xs uppercase font-bold">
+                        <tr>
+                            <th class="px-6 py-4">Produkt</th>
+                            <th class="px-6 py-4">Lagerstandort</th>
+                            <th class="px-6 py-4">Aktueller Bestand</th>
+                            <th class="px-6 py-4">Status</th>
+                            <th class="px-6 py-4 text-right">Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-sm">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium">Vanille Klassik</td>
+                            <td class="px-6 py-4 text-gray-500">Zentrallager Nord</td>
+                            <td class="px-6 py-4">450 kg</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Optimal</span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-ice-chocolate font-bold hover:underline">Nachbestellen</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium">Erdbeer Traum</td>
+                            <td class="px-6 py-4 text-gray-500">Zentrallager Nord</td>
+                            <td class="px-6 py-4 text-red-500 font-bold">12 kg</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">Kritisch</span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="bg-ice-strawberry text-white px-3 py-1 rounded text-xs font-bold shadow-sm">Sofort Order</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium">Schoko Deluxe</td>
+                            <td class="px-6 py-4 text-gray-500">Lager Süd</td>
+                            <td class="px-6 py-4">85 kg</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-bold">Niedrig</span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-ice-chocolate font-bold hover:underline">Nachbestellen</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-medium">Minze Choc</td>
+                            <td class="px-6 py-4 text-gray-500">Lager Süd</td>
+                            <td class="px-6 py-4">180 kg</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Optimal</span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-ice-chocolate font-bold hover:underline">Nachbestellen</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

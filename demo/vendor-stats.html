@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiken - Ice Cream Vendor Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ice: {
+                            cream: '#FDFCF0',
+                            strawberry: '#FF8A8A',
+                            chocolate: '#634832',
+                            mint: '#98FF98',
+                            cone: '#D2B48C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-ice-chocolate text-white flex-shrink-0 flex flex-col hidden md:flex">
+        <div class="p-6 text-center border-b border-white border-opacity-10">
+            <h2 class="text-2xl font-bold tracking-wider text-ice-mint">GROSSHANDEL</h2>
+            <p class="text-xs text-ice-cone">Admin-Bereich</p>
+        </div>
+        <nav class="mt-6 flex-1 px-4 space-y-2">
+            <a href="vendor-dashboard.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Offene Bestellungen</span>
+            </a>
+            <a href="vendor-warehouse.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium">Lagerübersicht</span>
+            </a>
+            <a href="vendor-customers.html" class="flex items-center px-4 py-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition-colors text-gray-300">
+                <span class="font-medium text-gray-300">Kundenliste</span>
+            </a>
+            <a href="vendor-stats.html" class="flex items-center px-4 py-3 bg-white bg-opacity-10 rounded-lg text-ice-mint">
+                <span class="font-medium">Statistiken</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-white border-opacity-10">
+            <a href="login.html" class="text-sm text-gray-400 hover:text-white transition-colors">Abmelden</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Statistiken & Analysen</h1>
+            <p class="text-gray-500">Einblicke in Verkaufszahlen und Trends der aktuellen Saison.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Sales Chart Simulation -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-800 mb-6 text-lg">Umsatzverlauf (Letzte 6 Monate)</h3>
+                <div class="flex items-end justify-between h-48 px-4">
+                    <div class="w-8 bg-ice-chocolate rounded-t-lg" style="height: 30%"></div>
+                    <div class="w-8 bg-ice-chocolate rounded-t-lg" style="height: 45%"></div>
+                    <div class="w-8 bg-ice-chocolate rounded-t-lg" style="height: 60%"></div>
+                    <div class="w-8 bg-ice-strawberry rounded-t-lg" style="height: 85%"></div>
+                    <div class="w-8 bg-ice-strawberry rounded-t-lg" style="height: 95%"></div>
+                    <div class="w-8 bg-ice-mint rounded-t-lg" style="height: 70%"></div>
+                </div>
+                <div class="flex justify-between mt-4 text-xs text-gray-400 font-bold px-2 uppercase tracking-widest">
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mär</span>
+                    <span>Apr</span>
+                    <span>Mai</span>
+                    <span>Jun</span>
+                </div>
+            </div>
+
+            <!-- Top Flavors Simulation -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-800 mb-6 text-lg">Meistverkaufte Sorten</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-medium text-gray-700">Vanille Klassik</span>
+                            <span class="text-gray-500">42%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 42%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-medium text-gray-700">Schoko Deluxe</span>
+                            <span class="text-gray-500">28%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-2">
+                            <div class="bg-amber-900 h-2 rounded-full" style="width: 28%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-medium text-gray-700">Erdbeer Traum</span>
+                            <span class="text-gray-500">18%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full" style="width: 18%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-medium text-gray-700">Minze Choc</span>
+                            <span class="text-gray-500">12%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-2">
+                            <div class="bg-emerald-400 h-2 rounded-full" style="width: 12%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

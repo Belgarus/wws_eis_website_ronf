@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellung Erfolgreich - Ice Cream Vendor Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ice: {
+                            cream: '#FDFCF0',
+                            strawberry: '#FF8A8A',
+                            chocolate: '#634832',
+                            mint: '#98FF98',
+                            cone: '#D2B48C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .success-animation { animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes scaleIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    </style>
+</head>
+<body class="bg-ice-cream min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-xl p-10 text-center success-animation">
+        <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Vielen Dank!</h1>
+        <p class="text-gray-600 mb-8">
+            Ihre Bestellung wurde erfolgreich entgegengenommen und wird nun von unserem Team im Großhandel bearbeitet.
+        </p>
+
+        <div class="bg-gray-50 rounded-2xl p-4 mb-8 text-left border border-gray-100">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Status</p>
+            <p class="text-ice-chocolate font-semibold flex items-center">
+                <span class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                In Bearbeitung
+            </p>
+        </div>
+
+        <a href="customer-dashboard.html" class="block w-full bg-ice-chocolate text-white font-bold py-4 rounded-xl shadow-lg hover:bg-opacity-90 transition-all">
+            Zurück zum Shop
+        </a>
+    </div>
+
+</body>
+</html>
